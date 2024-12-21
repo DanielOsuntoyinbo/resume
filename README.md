@@ -1,2 +1,2 @@
 # resume-website
-This is my resumne website
+This is my resume website
