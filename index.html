@@ -4,60 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Osuntoyinbo - Database Administrator</title>
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f6fa;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         header {
-            background: #343a40;
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
             color: #fff;
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 1rem 0 0;
+            font-weight: 600;
+        }
+        nav {
+            margin-top: 1rem;
         }
         nav a {
             color: #fff;
             margin: 0 1rem;
             text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            transition: all 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            border: 2px solid #fff;
+            border-radius: 5px;
         }
         section {
-            padding: 2rem 0;
+            padding: 4rem 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        section:nth-child(even) {
+            background: #f9f9fb;
         }
         footer {
             text-align: center;
-            padding: 1rem 0;
-            background: #343a40;
+            padding: 2rem 0;
+            background: #4e54c8;
             color: #fff;
         }
-        h1, h2 {
-            color: #343a40;
+        h2 {
+            font-size: 2rem;
+            color: #4e54c8;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #4e54c8;
+            margin: 0.5rem auto;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
         }
-        .btn-primary {
-            background-color: #007bff;
+        .card {
             border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .btn-primary {
+            background-color: #4e54c8;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
         }
         .btn-primary:hover {
-            background-color: #0056b3;
+            background-color: #8f94fb;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        section {
+            animation: fadeIn 1s ease;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Daniel Osuntoyinbo</h1>
-        <p>Database Administrator | Data Modeling | BI Expert</p>
+        <p>Database Administrator | Automation Engineer | BI Expert</p>
         <nav>
             <a href="#about">About Me</a>
             <a href="#skills">Skills</a>
@@ -66,83 +129,148 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>Talented Database Administrator with over five years of experience in database design, data modeling, and administration. Proficient in MongoDB, SQL Server, Oracle, and MySQL, with a proven ability to optimize performance, ensure high availability, and implement robust security measures.</p>
-    </section>
-    <section id="skills" class="container">
-        <h2>Skills</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <ul>
-                    <li>Data Conversion and Migration</li>
-                    <li>Database Upgrade and Optimization</li>
-                    <li>High Availability and Replication</li>
-                    <li>Backup and Restore</li>
-                    <li>MongoDB, Opsmanager, MySQL, MSSQL</li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <ul>
-                    <li>Database Monitoring and Performance Tuning</li>
-                    <li>ETL Processes</li>
-                    <li>Linux and Unix Systems</li>
-                    <li>Automation Tools: Chef, Ansible</li>
-                    <li>Project Management</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section id="experience" class="container">
-        <h2>Work Experience</h2>
-        <div class="card mb-3">
-            <div class="card-body">
-                <h3 class="card-title">Barclays Bank PLC - MongoDB Database Administrator</h3>
-                <h6 class="card-subtitle text-muted">United Kingdom | 03/2023 - Current</h6>
-                <ul>
-                    <li>Manage and support MongoDB database systems and infrastructure.</li>
-                    <li>Design and develop database changes for high-performance systems.</li>
-                    <li>Provide 24/7 engineering support and troubleshoot production issues.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="card mb-3">
-            <div class="card-body">
-                <h3 class="card-title">Parkway - MongoDB/MSSQL/MySQL Database Administrator</h3>
-                <h6 class="card-subtitle text-muted">Lagos, Nigeria | 09/2019 - 01/2023</h6>
-                <ul>
-                    <li>Maintained and configured MongoDB replica sets and instances.</li>
-                    <li>Optimized database performance with advanced indexing and query techniques.</li>
-                    <li>Implemented disaster recovery procedures and database security measures.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="card mb-3">
-            <div class="card-body">
-                <h3 class="card-title">Heritage Bank PLC - Database Administrator and BI Analyst</h3>
-                <h6 class="card-subtitle text-muted">Lagos, Nigeria | 05/2018 - 09/2019</h6>
-                <ul>
-                    <li>Developed BI reports to enhance business processes.</li>
-                    <li>Administered SQL Server, including clustering, replication, and backup operations.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section id="education" class="container">
-        <h2>Education</h2>
-        <p><strong>British Computer Society (BCS) - Certificate in IT</strong> | Lagos, 08/2021</p>
-        <p><strong>University of Lagos - Bachelor of Science: Mathematics and Statistics</strong> | Lagos, 02/2015</p>
-    </section>
-    <section id="contact" class="container text-center">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:dosuntoyinbo@gmail.com" class="btn btn-primary">Email Me</a></p>
-        <p>Phone: +447 435 778 491</p>
-        <p>Address: 508 Stephenson House, 11 Back Hulme Street, Oxbow, Salford, United Kingdom, M5 4QT</p>
-    </section>
+    <div id="root"></div>
     <footer>
         <p>&copy; 2024 Daniel Osuntoyinbo. All Rights Reserved.</p>
     </footer>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/babel">
+        const App = () => {
+            return (
+                <>
+                    <section id="about" className="container">
+                        <h2>About Me</h2>
+                        <p>Talented Database Administrator with over five years of experience in database design, data modeling, and administration. Proficient in MongoDB, SQL Server, Oracle, and MySQL, with a proven ability to optimize performance, ensure high availability, and implement robust security measures.</p>
+                    </section>
+                    <section id="skills" className="container">
+                        <h2>Skills</h2>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <ul>
+                                    <li>Data Conversion and Migration</li>
+                                    <li>Database Upgrade and Optimization</li>
+                                    <li>High Availability and Replication</li>
+                                    <li>Backup and Restore</li>
+                                    <li>MongoDB, Opsmanager, MySQL, MSSQL</li>
+                                </ul>
+                            </div>
+                            <div className="col-md-6">
+                                <ul>
+                                    <li>Database Monitoring and Performance Tuning</li>
+                                    <li>ETL Processes</li>
+                                    <li>Linux and Unix Systems</li>
+                                    <li>Automation Tools: Chef, Ansible</li>
+                                    <li>Project Management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="experience" className="container">
+                        <h2>Work Experience</h2>
+                        <div className="card">
+                            <div className="card-body">
+                                <h3 className="card-title">Barclays Bank PLC - MongoDB Database Administrator</h3>
+                                <h6 className="card-subtitle text-muted">United Kingdom | 03/2023 - Current</h6>
+                                <ul>
+                                    <li>Manage and support MongoDB database systems and infrastructure.</li>
+                                    <li>Design and develop database changes for high-performance systems.</li>
+                                    <li>Provide 24/7 engineering support and troubleshoot production issues.</li>
+									<li>Understand timescales and priorities and balance these to ensure deliveries.</li>
+									<li>React quickly to resolve production issues at all times of the day.</li>
+									<li>Take ownership of issues / enhancements and see them through to a suitable conclusion.</li>
+									<li>Work with application teams to understand their requirements / issues and deliver solutions for them.</li>
+									<li>Provide L3 support as part of 24*7 cover – including weekends.</li>
+									<li>Contribute to the strategy, architecture and future direction.</li>
+									<li>Building of the estate through MongoDB Opsmanager. Working closely with Unix team to ensure that servers hosting MongoDB are built to standard before builds are complete.</li>
+                                    <li>Migrating our builds to automation by understanding and working with MongoDB vendor support</li>
+                                    <li>Identifying, reporting and fixing of risk management surrounding our estate.</li>
+									<li>Working closely with our application teams to plan and complete resilience tests for MongoDB estates</li>
+                                    <li>Providing MongoDB support if any issues arise to identify root causes for issues, fixing and providing detailed RCA</li>
+                                    <li>Build replicasets and sharded clusters, supporting them by managing users within the databases and configuring Opsmanager for alerting and backups</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="card">
+                            <div className="card-body">
+                                <h3 className="card-title">Parkway - MongoDB/MSSQL/MySQL Database Administrator</h3>
+                                <h6 className="card-subtitle text-muted">Lagos, Nigeria | 09/2019 - 01/2023</h6>
+                                <ul>
+                                    <li>Maintained and configured MongoDB replica sets and instances.</li>
+                                    <li>CRUD Operations, document-based data modelling, design of collections and documents.</li>
+                                    <li>Experience with access pattern tuning, sharding implementation, index creation, and debugging query execution to obtain optimum database performance</li>
+									<li>Excellent understanding of various MongoDB database design patterns and physical architectures for different use case</li>
+									<li>Data replication and sharding in a distributed database</li>
+									<li>Aggregation of data using MapReduce and other batch processing use cases</li>
+									<li>Experienced in MongoDB Security.</li>
+									<li>Detecting performance problems using Mongo Profiler.</li>
+									<li>Automate routine tasks with scripts and open-source tools.</li>
+									<li>Schema Design – working with Application/Development team.</li>
+									<li>Defragmentation and query optimization.</li>
+									<li>Shell scripts for Monitoring like ‘slow queries’, replication lag, nodes fails, disk usage etc.</li>
+									<li>Write procedures for backup and disaster recovery.</li>
+									<li>Ensure that the databases achieve maximum performance and availability</li>
+									<li>Install, configure, test, monitor, upgrade, and tune new and existing MSSQL and MySQL databases.</li>
+									<li>Work with staff to develop and implement procedures to prevent data loss and maximize system availability.</li>
+									<li>Set up and control user access levels across databases to protect important data.</li>									
+                                </ul>
+                            </div>
+                        </div>
+						<div className="card">
+                            <div className="card-body">
+                                <h3 className="card-title">Heritage Bank Plc - Database Administrator and BI Analyst</h3>
+                                <h6 className="card-subtitle text-muted">Lagos, Nigeria | 05/2018 - 09/2019</h6>
+                                <ul>
+                                    <li>Worked with MS SQL Server.</li>
+                                    <li>Updated and optimization of T-SQL inquiries.</li>
+                                    <li>Established of reports on SSRS, SQL, Excel to improve business processes.</li>
+									<li>Developed methodologies to improve data analysis.</li>
+									<li>Business Intelligence reporting and data-set configuration.</li>
+									<li>Connecting to data source, importing data transforming data for business intelligence.</li>
+									<li>Resolved all database related calls logged by users (Incident management)</li>
+									<li>Sustained security and integrity of data and database access control, (Oracle and MSSQL)</li>
+									<li>Microsoft SQL Server administration, Deploy and maintained SQL clustering environment, MSSQL database cloning</li>
+									<li>Always-On availability group, transactional replication and log shipping.</li>
+									<li>RAC and ASM configuration and administration/RMAN backup and restore operations.</li>
+									<li>Successfully carried out system EOD, EOM and EOY processes.</li>
+                                </ul>
+                            </div>
+                        </div>
+						<div className="card">
+                            <div className="card-body">
+                                <h3 className="card-title">Coronation Insurance Plc - Database Administrator</h3>
+                                <h6 className="card-subtitle text-muted">Lagos, Nigeria | 02/2017 - 05/2018</h6>
+                                <ul>
+                                    <li>Provided resources and skill sets to support DBA functions for applications.</li>
+                                    <li>Proposed database changes to ease monitoring and administrative effort.</li>
+                                    <li>Established working relationships across various departments to understand existing and emerging IT requirements..</li>
+									<li>Participated in situation management of incidents to support database operations.</li>
+									<li>BCreated primary database storage structures (table spaces) on applications..</li>
+									<li>Created new database objects (table, views, indexes) on application.</li>
+									<li>Modified database structure from information given by application developers</li>
+									<li>Performed database reorganizations, export/imports, and evaluate and backup</li>
+									<li>Performance analysis, storage engines, diagnostics and debugging, maintenance, backup, and recovery</li>
+									<li>Always-On availability group, transactional replication and log shipping.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="education" className="container">
+                        <h2>Education</h2>
+                        <p><strong>British Computer Society (BCS) - Certificate in IT</strong> | Lagos, 08/2021</p>
+                        <p><strong>University of Lagos - Bachelor of Science: Mathematics and Statistics</strong> | Lagos, 02/2015</p>
+                    </section>
+                    <section id="contact" className="container">
+                        <h2>Contact</h2>
+                        <p>Email: <a href="mailto:dosuntoyinbo@gmail.com" className="btn btn-primary">Email Me</a></p>
+                        <p>Phone: +447 435 778 491</p>
+                        <p>Address: 508 Stephenson House, 11 Back Hulme Street, Oxbow, Salford, United Kingdom, M5 4QT</p>
+                    </section>
+                </>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
 </body>
 </html>
